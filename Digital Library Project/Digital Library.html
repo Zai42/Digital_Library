@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head style="max-width: 100%;">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width", initial-scale=1.0">
+    <title>Digital Library</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #header {
+            padding-left:21%;
+            overflow: hidden;
+            background-color: black;
+            margin-left: 30px;
+        }
+        #image{
+            width: 90px;
+            max-width: 100%;
+            position:absolute;
+            left:20px;
+        }
+        #header a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            margin-left: 39px;
+        }
+
+        #header a:hover {
+            background-color: rgba(0, 0, 0, 0.25);
+            color: white;
+            font-size: 20px;
+            font-weight: bolder;
+            font-style:italic;
+        }
+
+        #header a.active {
+            background-color: #053d05;
+            color: white;
+            font-size: 20px;
+        }
+        #genre{
+            background-image:url("background img.jpg");
+            margin-top: 480px;
+            padding: 300px;
+        }
+        #genre_button1 {
+            border-style: solid;
+            border-color:green;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+        }
+        #genre_button1:hover{
+            background-color: rgba(0, 128, 0, 0.35);
+            font-weight: bolder;
+            max-width: 100%;
+        }
+        #genre_button2 {
+            border-style: solid;
+            border-color:red;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+            position: relative;
+            bottom:140px;
+            left:469px;
+        }
+        #genre_button2:hover{
+            background-color: rgba(128, 0, 15, 0.35);
+            font-weight: bolder;
+        }
+        #genre_button3 {
+            border-style: solid;
+            border-color:blue;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+            position: relative;
+            bottom:20px;
+            left:325px;
+        }
+        #genre_button3:hover{
+            background-color: rgba(0, 47, 128, 0.47);
+            font-weight: bolder;
+        }
+        #genre_button4 {
+            border-style: solid;
+            border-color:deeppink;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+        }
+        #genre_button4:hover{
+            background-color: rgba(255, 105, 180, 0.43);
+            border-style: solid;
+            color: white;
+            font-weight: bolder;
+        }
+        #genre_button5 {
+            border-style: solid;
+            border-color:yellowgreen;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+        }
+        #genre_button5:hover{
+            background-color: rgba(255, 215, 0, 0.34);
+            border-style: solid;
+            color:white;
+            font-weight: bolder;
+        }
+        #Author{
+            background-image:url("bg img 2.1.jpg");
+            max-width: 100%;
+            padding: 300px;
+        }
+        #author_button1 {
+            border-style: solid;
+            border-color:green;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+        }
+        #author_button1:hover{
+            background-color: rgba(0, 128, 0, 0.35);
+            font-weight: bolder;
+        }
+        #author_button2 {
+            border-style: solid;
+            border-color:red;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+            position: relative;
+            bottom:-40px;
+            left:390px;
+        }
+        #author_button2:hover{
+            background-color: rgba(128, 0, 15, 0.35);
+            font-weight: bolder;
+        }
+        #author_button3 {
+            border-style: solid;
+            border-color:blue;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+            position: relative;
+            bottom:-40px;
+            left:500px;
+        }
+        #author_button3:hover{
+            background-color: rgba(0, 47, 128, 0.47);
+            font-weight: bolder;
+        }
+        #author_button4 {
+            border-style: solid;
+            border-color:deeppink;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+        }
+        #author_button4:hover{
+            background-color: rgba(255, 105, 180, 0.43);
+            border-style: solid;
+            color: white;
+            font-weight: bolder;
+        }
+        #author_button5 {
+            border-style: solid;
+            border-color:yellowgreen;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+        }
+        #author_button5:hover{
+            background-color: rgba(255, 215, 0, 0.34);
+            border-style: solid;
+            color:white;
+            font-weight: bolder;
+        }
+        #department{
+            background-image:url("bg img 3.jpg");
+            max-width: 100%;
+            padding: 300px;
+        }
+        #department_button1 {
+            border-style: solid;
+            border-color:green;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+        }
+        #department_button1:hover{
+            background-color: rgba(0, 128, 0, 0.35);
+            font-weight: bolder;
+        }
+        #department_button3 {
+            border-style: solid;
+            border-color:blue;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+            position: relative;
+            bottom:-40px;
+            left:300px;
+        }
+        #department_button3:hover{
+            background-color: rgba(0, 47, 128, 0.47);
+            font-weight: bolder;
+        }
+        #department_button4 {
+            border-style: solid;
+            border-color:deeppink;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+        }
+        #department_button4:hover{
+            background-color: rgba(255, 105, 180, 0.43);
+            border-style: solid;
+            color: white;
+            font-weight: bolder;
+        }
+        #department_button5 {
+            border-style: solid;
+            border-color:yellowgreen;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+            float:right;
+        }
+        #department_button5:hover{
+            background-color: rgba(255, 215, 0, 0.34);
+            border-style: solid;
+            color:white;
+            font-weight: bolder;
+        }
+        #Officalwebsite{
+            border-style: solid;
+            border-color:yellowgreen;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+            float:right;
+        }
+        #Officalwebsite:hover{
+            background-color: rgba(255, 215, 0, 0.34);
+            border-style: solid;
+            color:white;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body style="background-image: url('bg img top.jpg');background-repeat: no-repeat">
+<div>
+<h1 style="position: absolute;  top: 5%; left: 20px; width: 100%; text-align: center;color:white;">Pakistan Institute of Engineering and Technology</h1>
+<h3 style="position: absolute;  top: 20%; left: -10px; width: 100%; text-align: center;color:white;">WELCOME TO <br />THE DIGITAL LIBRARY OF <br/>PAKISTAN INSTITUTE OF ENGINEERING AND TECHNOLOGY</h3>
+<button id="Officalwebsite" style="position: absolute;top:40%;left:860px;"><a href="Digital%20Library%20All%20available%20Books.php" target="_blank" style="color:white;text-decoration: none;">Search Books</a></button>
+</div>
+<div id="header">
+    <a class="active" style="font-size: 140%;" href="Digital Library.html" target="_blank"><i class="fa fa-home" aria-hidden="true"></i></a>
+    <a href="Digital Library All available Books.php" target="_blank">All <i class="fa fa-book" aria-hidden="true"></i></a>
+    <a href="#genre">Genre</a>
+    <a href="#department">Departments</a>
+    <a href="#Author">Authors</a>
+    <a href="Digital%20Library%20Suggestions.php">Suggest a book</a>
+    <a href="#footer">About Us</a>
+    <img id="image" src="Piet logo.png">
+</div>
+<div id="genre">
+    <h1 style="text-align: center;position: relative;bottom: 300px; left: -10px; color:white;">Genre</h1>
+    <button id="genre_button1" style="position: relative;bottom:250px;left:590px;"><a href="Digital Library Genre (Novel).php" target="_blank" style="max-width: 100%;text-decoration: none;color:white;">Novel</a></button>
+    <button id="genre_button2"><a href="Digital Library Genre (History).php" target="_blank" style="max-width: 100%;text-decoration: none;color:white;">History</a></button>
+    <button id="genre_button3"><a href="Digital Library Genre (Non Fiction).php" target="_blank" style="max-width: 100%;text-decoration: none;color:white;">Non Fiction</a></button>
+    <button style="text-align: center;position: relative;top: 100px; left:185px" id="genre_button4"><a href="Digital Library Genre (Fiction).php" target="_blank" style="max-width: 100%;text-decoration: none;color:white;">Fiction</a></button>
+    <button style="text-align: center;position: relative;top: 230px; left:65px" id="genre_button5"><a href="Digital Library Genre (Rare).php" target="_blank" style="max-width: 100%;text-decoration: none;color:white;">Rare</a></button>
+</div>
+<div id="Author">
+    <h1 style="text-align: center;position: relative;bottom: 200px; left: -10px; color:white;">Authors</h1>
+    <button id="author_button1" style="position: relative;bottom:94px;left:555px;"><a href="Digital Library Author (J K Rowling).php" target="_blank" style="max-width: 100%;text-decoration: none;color:white;">J.K Rowling</a></button>
+    <button id="author_button2"><a href="Digital Library Author (Leo Tolstoy).php" target="_blank" style="max-width: 100%;text-decoration: none;color:white;">Leo Tolstoy</a></button>
+    <button id="author_button3"><a href="Digital Library Author (Stephen King).php" target="_blank" style="max-width: 100%;text-decoration: none;color:white;">Stephen King</a></button>
+    <button style="text-align: center;position: relative;top: 200px; left:55px" id="author_button4"><a href="Digital Library Author (Dan Brown).php" target="_blank" style="max-width: 100%;text-decoration: none;color:white;">Dan Brown</a></button>
+    <button style="text-align: center;position: relative;top: 39px; left:-440px" id="author_button5"><a href="Digital Library Author (Charles Dickens).php" target="_blank" style="max-width: 100%;text-decoration: none;color:white;">Charles Dickens</a></button>
+</div>
+<div id="department" style="padding-left:16px">
+    <h1 style="text-align: center;position: relative;bottom: -120px; left: 120px; color:white;">Department</h1>
+    <button id="department_button1" style="position: relative;bottom:94px;left:819px;"><a href="Digital%20Library%20Dep(Computer%20Science).php" target="_blank" style="max-width: 100%;text-decoration: none;color:white;">Computer Science</a></button>
+    <button id="department_button3"><a href="Digital Library Dep(Electrical Eng).php" target="_blank" style="max-width: 100%;text-decoration: none;color:white;">Electrical Eng</a></button>
+    <button style="text-align: center;position: relative;top: 200px; left:460px" id="department_button4"><a href="Digital Library Dep(Civil Eng).php" target="_blank" style="max-width: 100%;text-decoration: none;color:white;">Civil Eng</a></button>
+    <button style="text-align: center;position: relative;top: 40px; left:-266px" id="department_button5"><a href="Digital Library Dep(Mechanical Eng).php" target="_blank" style="max-width: 100%;text-decoration: none;color:white;">Mechanical Eng</a></button>
+</div>
+<footer id="footer" style="padding:30px;margin-left:10px;background-color:black;color:white;">
+    <i class="fa fa-university" aria-hidden="true"></i>
+    <p style="display: inline">Southern Bypass Road, Multan (1.9 KM from Khanewal Road</p>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp;
+    <i class="fa fa-envelope" aria-hidden="true"></i>
+    <p style="display: inline">info@piet.edu.pk</p>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp;
+    <i class="fa fa-phone" aria-hidden="true"></i>
+    <p style="display: inline">0616353303</p>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp;
+    <i class="fa fa-globe" aria-hidden="true"></i>
+    <p style="display: inline"><a href="https://piet.edu.pk" target="_blank" style="text-decoration: none; color:white;">www.piet.edu.pk</a></p>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp;
+    <i class="fa fa-user-secret" aria-hidden="true"></i>
+    <p style="display: inline">Developer:Musab Bin Usman (2kx9 cs 19)</p>
+</footer>
+</body>
+</html>
